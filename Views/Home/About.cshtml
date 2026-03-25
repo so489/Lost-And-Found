@@ -1,0 +1,109 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e9eef4 100%);
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 6px 18px rgba(18,24,40,0.06);
+        animation: fadeInUp .7s ease both;
+    }
+
+    @@keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feature-card { transition: transform .18s ease, box-shadow .18s ease; }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(11,22,44,0.08); }
+
+    .gif-right { max-height: 220px; }
+
+    .faq .card { border-radius: 6px; overflow: hidden; }
+</style>
+
+<div class="about-hero mb-4">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <h1 class="display-4">About the Lost &amp; Found Portal</h1>
+            <p class="lead text-muted">A centralized campus service to report, track and recover lost belongings. We make it easy for students and staff to report incidents and for the administration to manage recovered items.</p>
+            <p>Our aim is to reduce the stress and time lost when personal items go missing — by providing a simple reporting form, a public gallery of pending items, and a secure admin intake process to ensure items are returned to their rightful owners.</p>
+        </div>
+        <div class="col-md-4 text-center d-none d-md-block">
+            <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="lost and found" class="img-fluid gif-right rounded" />
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+                <h5 class="card-title">Our Mission</h5>
+                <p class="card-text">To reunite lost items with their owners promptly and securely by enabling easy reporting, transparent tracking and verified handovers.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+                <h5 class="card-title">Our Vision</h5>
+                <p class="card-text">A campus where lost property is minimized and recovery is fast — supported by digital tools and an accountable administration.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card feature-card p-3 h-100">
+            <div class="card-body">
+                <h5 class="card-title">What We Provide</h5>
+                <ul>
+                    <li>Easy online reporting</li>
+                    <li>Public gallery of pending / with-admin items</li>
+                    <li>Admin verification & secure handover</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-7">
+        <h4>Frequently Asked Questions</h4>
+        <div id="faqAccordion" class="faq">
+            <div class="card">
+                <div class="card-header p-2" id="q1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#a1" aria-expanded="true" aria-controls="a1">How do I report a lost item?</button>
+                    </h5>
+                </div>
+
+                <div id="a1" class="collapse show" aria-labelledby="q1" data-parent="#faqAccordion">
+                    <div class="card-body">Use the "Report Lost Item" form. Provide a clear title, description, location and contact details so Admin can reach you.</div>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <div class="card-header p-2" id="q2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#a2" aria-expanded="false" aria-controls="a2">What happens when an item is found?</button>
+                    </h5>
+                </div>
+                <div id="a2" class="collapse" aria-labelledby="q2" data-parent="#faqAccordion">
+                    <div class="card-body">Finders or Admin can add items to the system. Admin verifies the physical item and updates the status. Owners can claim items at the Admin office after verification.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <h4>Contact & Office Hours</h4>
+        <p class="mb-1">Admin Office Email: <a href="mailto:admin@campus.example.edu">admin@campus.example.edu</a></p>
+        <p class="mb-1">Phone: +1-555-0100</p>
+        <p class="mb-1">Office Hours: Mon - Fri, 9:00 AM - 5:00 PM</p>
+
+        <h5 class="mt-3">Developer</h5>
+        <p class="small">Developed by Kamadgiri Software Solutions (P) Ltd. For support, contact dev@kss.example.com</p>
+    </div>
+</div>
+

@@ -1,0 +1,34 @@
+@model IEnumerable<Lost_And_Found.Models.LostItem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron" style="background: linear-gradient(135deg, #e0f7fa 0%, #c8e6ff 100%);">
+    <div class="row align-items-center">
+        <div class="col-12">
+            <h1>Welcome to the Lost &amp; Found Portal</h1>
+            <p>Report your lost items and check the gallery.</p>
+            <marquee>@ViewBag.Notifications</marquee>
+            <p>
+                <a class="btn btn-primary" href="@Url.Action("Report","Home")">Report Lost Item</a>
+                <a class="btn btn-secondary" href="@Url.Action("Gallery","Home")">View Gallery</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<h3>Recent Items</h3>
+<div class="row">
+    @foreach(var item in Model.Take(6))
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text"><small class="text-muted">Location: @item.Location</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,20 @@
+@model IEnumerable<Lost_And_Found.Models.LostItem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Gallery - Lost and Pending / With Admin</h2>
+<div class="row">
+    @foreach(var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text"><small class="text-muted">Location: @item.Location</small></p>
+                    <p class="card-text"><small class="text-muted">Reported: @item.DateReported.ToString("g")</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

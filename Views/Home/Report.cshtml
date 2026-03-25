@@ -1,0 +1,32 @@
+@model Lost_And_Found.Models.LostItem
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Report Lost Item</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Location)
+        @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReporterName)
+        @Html.TextBoxFor(m => m.ReporterName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contact)
+        @Html.TextBoxFor(m => m.Contact, new { @class = "form-control" })
+    </div>
+    <!-- ReportType removed; default reporting behavior preserved -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

@@ -1,0 +1,42 @@
+@model IEnumerable<Lost_And_Found.Models.Enquiry>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Manage Enquiries</h2>
+<p>
+    <a href="@Url.Action("Dashboard","Admin")" class="btn btn-primary">Dashboard</a>
+    <a href="@Url.Action("Manage","Admin")" class="btn btn-secondary">Manage Items</a>
+    <a href="@Url.Action("Notifications","Admin")" class="btn btn-warning">Notifications</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var e in Model)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.Email</td>
+                <td>@e.Message</td>
+                <td>@e.Date.ToString("g")</td>
+                <td>
+                    @using (Html.BeginForm("DeleteEnquiry","Admin", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("id", e.Id)
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
